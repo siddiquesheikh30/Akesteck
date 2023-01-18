@@ -125,7 +125,7 @@ const HomePage = ({ navigation }) => {
               width: '35%',
             }}>
             <TouchableOpacity
-              onPress={() => { setloadingProd(true); GetProducts(); setSort(false); }}
+              onPress={() => { setloadingProd(true); GetProducts(productLimit); setSort(false); }}
               style={{ marginVertical: 4, padding: 5 }}>
               <Text style={{ color: !activesort ? 'red' : '#000' }}>
                 New to Old
