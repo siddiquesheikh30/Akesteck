@@ -92,19 +92,21 @@ const HomePage = ({ navigation }) => {
           padding: 12,
           justifyContent: 'space-between',
           alignItems: 'center',
+          backgroundColor: '#e02a52',
+          marginBottom: 5,
         }}>
-        <Text style={{ color: 'red', fontSize: 16, fontWeight: '500' }}>Akestec</Text>
+        <Text style={{ color: '#fff', fontSize: 16, fontWeight: '500' }}>Akestec</Text>
         <TouchableOpacity
           style={{
             flexDirection: 'row',
             alignItems: 'center',
             borderWidth: 1,
-            borderColor: 'red',
+            borderColor: '#fff',
             padding: 3,
             borderRadius: 8,
           }}
           onPress={() => setSort(true)}>
-          <Text>Sort</Text>
+          <Text style={{ color: '#fff' }}>Sort</Text>
           <Image
             resizeMode="contain"
             source={require('../assets/sort.png')}
@@ -146,7 +148,7 @@ const HomePage = ({ navigation }) => {
           flexDirection: 'row',
           justifyContent: 'space-between',
           alignItems: 'center',
-          backgroundColor: '#fff',
+          backgroundColor: '#ffe',
           borderRadius: 25,
           elevation: 8,
           marginHorizontal: 10,
@@ -154,9 +156,6 @@ const HomePage = ({ navigation }) => {
           padding: 8,
           zIndex: -1,
         }}>
-
-
-
         {loadingCat ? (<View style={{ justifyContent: 'center', width: '100%' }}><ActivityIndicator size={30} color='red' /></View>) : categories.map(item => {
           return (
             <TouchableOpacity key={item}
@@ -243,15 +242,21 @@ const styles = StyleSheet.create({
   },
   title: {
     textAlign: 'center',
+    color: '#777',
     fontSize: 12,
-    fontWeight: 700,
+    fontWeight: '700',
     borderWidth: 1,
-    borderColor: 'red',
+    borderColor: '#e02a52',
+    backgroundColor: '#fff',
     borderRadius: 15,
     width: 70,
     paddingVertical: 10,
     height: 50,
     textTransform: 'capitalize',
+    shadowOffset: { width: 2, height: 2 },
+    shadowColor: '#444',
+    shadowOpacity: 0.5,
+    shadowRadius: 2,
   },
   listItem: {
     alignItems: 'center',

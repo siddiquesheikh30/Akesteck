@@ -35,6 +35,31 @@ const ProductDetails = ({ route, navigation }) => {
 
   return (
     <View style={styles.container}>
+      <View
+        style={{
+          flexDirection: 'row',
+          padding: 12,
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          backgroundColor: '#e02a52',
+          marginBottom: 5,
+        }}>
+        <Text style={{ color: '#fff', fontSize: 16, fontWeight: '500' }}>Product Title</Text>
+        <TouchableOpacity
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+          onPress={() => navigation.goBack()}>
+          <Image
+            resizeMode="contain"
+            source={require('../assets/close.png')}
+            style={{ width: 30, height: 30 }}
+          />
+        </TouchableOpacity>
+      </View>
+
       {loading ? (<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <ActivityIndicator size={30} color='red' />
       </View>) : (<View>
@@ -50,14 +75,15 @@ const ProductDetails = ({ route, navigation }) => {
           style={{
             flexDirection: 'row',
             justifyContent: 'space-between',
-            alignItems: 'center',
-            padding: 30,
+            alignItems: 'flex-start',
+            paddingVertical: 15,
+            paddingHorizontal: 10,
           }}>
-          <Text style={{ fontSize: 16, fontWeight: '700', color: '#000' }}>
+          <Text style={{ flex: 9, fontSize: 15, fontWeight: '700', color: '#000' }}>
             {productDetails.title}
           </Text>
-          <Text style={{ fontSize: 18, fontWeight: '700', color: '#24963f' }}>
-            {productDetails.price}
+          <Text style={{ flex: 2, fontSize: 15, fontWeight: '700', color: '#24963f' }}>
+            INR. {productDetails.price}
           </Text>
         </View>
 

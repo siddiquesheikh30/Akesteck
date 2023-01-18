@@ -36,6 +36,31 @@ const Categories = ({ navigation, route }) => {
 
   return (
     <View style={{ flex: 1 }}>
+      <View
+        style={{
+          flexDirection: 'row',
+          padding: 12,
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          backgroundColor: '#e02a52',
+          marginBottom: 5,
+        }}>
+        <Text style={{ color: '#fff', fontSize: 16, fontWeight: '500' }}>Category Screen</Text>
+        <TouchableOpacity
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+          onPress={() => navigation.goBack()}>
+          <Image
+            resizeMode="contain"
+            source={require('../assets/close.png')}
+            style={{ width: 30, height: 30 }}
+          />
+        </TouchableOpacity>
+      </View>
+
       {loading ?
         (<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
           <ActivityIndicator size={30} color='red' />
